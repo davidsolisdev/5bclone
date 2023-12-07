@@ -1,0 +1,3 @@
+.header {
+  @apply w-full  fixed flex flex-wrap justify-center top-0 z-50 transition-all duration-300;
+}
