@@ -9,7 +9,7 @@ import ButtonDrawer from "./ButtonDrawer";
 import LinkHeader from "./Linklist/linkHeader";
 
 export default function Header() {
-  const [width, setWidth] = React.useState(window?.innerWidth);
+  const [width, setWidth] = React.useState(0);
   const isMenuOpen = useHeaderStore((state) => state.isMenuOpen);
   const isScrolled = useHeaderStore((state) => state.isScrolled);
   const setIsScrolled = useHeaderStore((state) => state.setIsScrolled);
@@ -31,6 +31,7 @@ export default function Header() {
   }, []);
 
   React.useEffect(() => {
+    setWidth(window.innerWidth);
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
